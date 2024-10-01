@@ -30,8 +30,6 @@
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 20 );
 				camera.position.z = 2.5;
 
-				// scene
-
 				scene = new THREE.Scene();
 
 				const ambientLight = new THREE.AmbientLight( 0xffffff, 0.5 );
@@ -41,19 +39,12 @@
 				camera.add( pointLight );
 				scene.add( camera );
 
-				// manager
-
+				
 				function loadModel() {
 
-					/*object.traverse( function ( child ) {
-
-						if ( child.isMesh ) child.material.map = texture;
-
-					} );*/
-
-					//object.position.y = - 0.95;
-					object.position.y = - 0.00;
-					object.scale.setScalar( 0.01 );
+									
+					object.position.y =  0.10;
+					object.scale.setScalar( 0.02 );
 					scene.add( object );
 
 					render();
@@ -61,14 +52,6 @@
 				}
 
 				const manager = new THREE.LoadingManager( loadModel );
-
-				// texture
-
-				/*const textureLoader = new THREE.TextureLoader( manager );
-				const texture = textureLoader.load( 'textures/uv_grid_opengl.jpg', render );
-				texture.colorSpace = THREE.SRGBColorSpace;*/
-
-				// model
 
 				function onProgress( xhr ) {
 
